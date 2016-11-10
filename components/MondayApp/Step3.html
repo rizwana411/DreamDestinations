@@ -1,0 +1,25 @@
+<br>
+<div class="row" style="text-align: center">
+    <h2 class="step3Labels">Thank You!</h2>
+    <h2 class="step3Labels">Ticket Confirmed!✔ </h2>
+    <span class="step3Labels">{{data.FirstName}} {{data.LastName}}({{data.Contact }}) will depart for
+        {{data.Location.city}} on {{data.DepartureDt | date:'fullDate' }}
+        <span ng-if="data.radioModel == 'Return'"
+              class="step3Labels">and return on {{data.ReturnDt | date:'fullDate' }}</span></span>
+    <br><br>
+    <button class="btn btn-danger"
+            ng-click="send(data.Email,mailMessage(data.FirstName,data.Location.city,data.DepartureDt))">
+        Send Mail.<span class="glyphicons glyphicons-envelope"></span></button>
+
+    <a class="btn" style="background-color:navy; color:chartreuse "
+       href="https://maps.google.com?saddr=Current+Location&daddr={{data.Location.city}}" target="_blank">
+        See On Map</a>
+
+    <a class="btn" style="background-color:yellow; color:tomato "
+       href="http://www.momondo.in/hotels/s/{{data.Location.city}}?context=58185-2" target="_blank">
+        Find Hotels</a>
+
+    <p style="color: chartreuse; font-size: 20px;" ng-if="done && serverMessage">Thank You! Your details have been send
+        to your mail. </p>
+
+</div>

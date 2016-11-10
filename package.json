@@ -1,0 +1,38 @@
+{
+  "name": "DreamDestinations",
+  "version": "0.0.1",
+  "description": "travel information",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "build": "webpack --progress",
+    "build-unminified": "cross-env UNMINIFIED=true webpack --progress",
+    "watch": "webpack --watch",
+    "watch-unminified": "cross-env UNMINIFIED=true webpack --watch",
+    "release": "cross-env MODE=release webpack --progress",
+    "ci": "cross-env NAMES=release* MODE=release webpack"
+  },
+  "keywords": [],
+  "author": "Bhagyashree lokhande",
+  "license": "ISC",
+  "dependencies": {
+    "api-check": "7.5.5",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "font-awesome": "^4.7.0",
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "nodemailer": "^2.6.4",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "style-loader": "^0.13.1"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "0.1.1",
+    "babel-preset-es2015": "6.3.13",
+    "bootstrap-webpack": "0.0.5",
+    "webpack-angularity-solution": "^1.2.0"
+  }
+}

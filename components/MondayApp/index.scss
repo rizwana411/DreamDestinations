@@ -1,0 +1,123 @@
+html {
+  max-height: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: auto;
+  background-image: url('/assets/Paulius-Travel.jpg');
+  background-size: 100% 100%;
+}
+#snow{
+  background: none;
+  font-family: Androgyne;
+  background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index:1;
+  -webkit-animation: snow 10s linear infinite;
+  -moz-animation: snow 10s linear infinite;
+  -ms-animation: snow 10s linear infinite;
+  animation: snow 10s linear infinite;
+}
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+header{
+  background-color: #000066;
+  height:120px;
+}
+.tabActive{
+  font-weight: bold;
+  font-size:23px;
+  color: #0000AA
+}
+.tabInactive{
+  font-weight: bold;
+  font-size:23px;
+  color: #D2E8FA;
+}
+
+.box {
+  color: #EEE8D5;
+  background-color: slategray;
+  opacity: 0.7;
+  border-radius: 20px;
+  padding: 50px 40px;
+  margin-top: 10%;
+  border: 2px solid white;
+}
+
+.homeBox{
+  margin-top: 15.5%;
+  background-color: slategray;
+  border-radius: 20px;
+}
+.h2{
+  margin-bottom: 50px;
+}
+
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
+.validation-valid{
+  visibility: hidden;
+}
+
+.validation-invalid {
+  font-size: large;
+  color: red;
+}
+.not-active{
+  pointer-events: none;
+}
+.pointer-active{
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.ui-select-choices-group-label {
+  color: #6ee866;
+  font-size: 15px;
+}
+.labels{
+  font-size: 22px;
+}
+.step3Labels{
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+}
+
+.dropdown-nested{
+  opacity: 1;
+  color: black;
+}

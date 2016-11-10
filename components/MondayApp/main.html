@@ -1,0 +1,9 @@
+<div class="box container">
+    <div ui-sref="home" style="cursor: pointer"><h2><i class="fa fa-home" aria-hidden="true"></i>Home</h2></div>
+    <uib-tabset  justified="true" active="active">
+        <uib-tab ng-repeat="step in tabs" active="step.active" ui-sref="{{step.action}}" disable="step.disabled" class="{{step.class}}">
+            <uib-tab-heading class="{{($index == active)?'tabActive':'tabInactive'}}">{{step.name}}</uib-tab-heading>
+            <div ui-view></div>
+        </uib-tab>
+    </uib-tabset>
+</div>

@@ -1,0 +1,70 @@
+<form name="user">
+    <div>
+        <div class="row ">
+            <div class="col-md-6">
+                <p class="labels">Location:</p>
+                <ui-select name="location" ng-model="data.Location" validator="required" theme="bootstrap"
+                           style="width: 300px;">
+                    <ui-select-match placeholder="Select or search a country in the list...">
+                        {{$select.selected.city}}
+                    </ui-select-match>
+                    <ui-select-choices group-by="'country'" repeat="country in countries | filter: $select.search">
+                        <span ng-bind-html="country.city | highlight: $select.search"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <br>
+        <div class="col-md-6 btn-group">
+            <label class="btn btn-primary" ng-model="data.radioModel" uib-btn-radio="'OneWay'">One Way</label>
+            <label class="btn btn-primary" ng-model="data.radioModel" uib-btn-radio="'Return'">Return</label>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                       ng-model="data.DepartureDt" style="opacity: 1;"
+                       placeholder="Select the Departure Date..."
+                       is-open="popup1.opened"
+                       datepicker-options="dateOptions" ng-required="true"
+                       close-text="Close"
+                       alt-input-formats="altInputFormats"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open1()">
+                        <i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="row" ng-if="data.radioModel == 'Return'">
+        <div class="col-md-6">
+            <p class="input-group">
+                <input type="text" class="form-control" uib-datepicker-popup="{{format}}"
+                       ng-model="data.ReturnDt" style="opacity: 1;"
+                       is-open="popup2.opened"
+                       placeholder="Select the Return Date..."
+                       datepicker-options="dateOptions" close-text="Close"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open2()">
+                <i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+            </p>
+        </div>
+        <span ng-show="data.ReturnDt < data.DepartureDt" style="font-size: large; color: red;">Please enter the valid return Date. </span>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <button type="submit" validation-submit="user" class="btn btn-block btn-primary" ng-click="next(2)">
+                Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+    </div>
+</form>
